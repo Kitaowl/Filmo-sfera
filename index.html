@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmo-sfera - Strona Główna</title>
+    <link rel="stylesheet" href="Resources/CSS/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="nav">
+                <div class="logo">Filmo-sfera</div>
+                <ul class="nav-links">
+                    <li><a href="filmy.html" data-page="filmy">Filmy</a></li>
+                    <li data-auth><a href="panel-logowania.html" data-page="panel-logowania">Zaloguj</a></li>
+                    <li data-user class="hidden"><a href="profil-uzytkownika.html" data-page="profil-uzytkownika">Mój Profil</a></li>
+                    <li data-user class="hidden"><a href="dodawanie-nowego-filmu.html" data-page="dodawanie-nowego-filmu">Dodaj Film</a></li>
+                    <li data-user class="hidden"><a href="#" data-action="logout">Wyloguj</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Strona z filmami -->
+            <section id="movies-page" class="page-section">
+                <h1 class="page-title">Wszystkie Filmy</h1>
+                <div id="movies-container" class="movies-grid"></div>
+            </section>
+
+            <!-- Strona logowania/rejestracji -->
+            <section id="login-page" class="page-section hidden">
+                <div class="form-container">
+                    <h2 class="page-title">Logowanie</h2>
+                    
+                    <form id="login-form" data-form="login">
+                        <div class="form-group">
+                            <input type="text" name="login" class="form-control" placeholder="Login" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control" placeholder="Hasło" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Zaloguj</button>
+                    </form>
+
+                    <form id="register-form" data-form="register" class="hidden">
+                        <div class="form-group">
+                            <input type="text" name="login" class="form-control" placeholder="Login" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control" placeholder="Hasło" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password_confirm" class="form-control" placeholder="Powtórz hasło" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Zarejestruj</button>
+                    </form>
+
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button class="btn btn-secondary" data-action="show-register" data-auth>Nie masz konta? Zarejestruj się</button>
+                        <button class="btn btn-secondary" data-action="show-login" data-user class="hidden">Masz już konto? Zaloguj się</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Strona profilu użytkownika -->
+            <section id="profile-page" class="page-section hidden">
+                <h1 class="page-title">Profil użytkownika: <span id="user-login"></span></h1>
+                <div class="movies-grid" id="user-movies-container"></div>
+            </section>
+
+            <!-- Strona dodawania filmu -->
+            <section id="add-movie-page" class="page-section hidden">
+                <div class="form-container">
+                    <h2 class="page-title">Dodaj Nowy Film</h2>
+                    <form data-form="add-movie">
+                        <div class="form-group">
+                            <input type="text" name="title" class="form-control" placeholder="Tytuł filmu" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="description" class="form-control" placeholder="Opis filmu" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="image_path" class="form-control" placeholder="URL obrazka (opcjonalnie)">
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Dodaj Film</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="Resources/JS/script.js"></script>
+</body>
+</html>

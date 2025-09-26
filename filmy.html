@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmy - Filmo-sfera</title>
+    <link rel="stylesheet" href="../Resources/CSS/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="nav">
+                <div class="logo">Filmo-sfera</div>
+                <ul class="nav-links">
+                    <li><a href="filmy.html" data-page="filmy">Filmy</a></li>
+                    <li data-auth><a href="panel-logowania.html" data-page="panel-logowania">Zaloguj</a></li>
+                    <li data-user class="hidden"><a href="profil-uzytkownika.html" data-page="profil-uzytkownika">Mój Profil</a></li>
+                    <li data-user class="hidden"><a href="dodawanie-nowego-filmu.html" data-page="dodawanie-nowego-filmu">Dodaj Film</a></li>
+                    <li data-user class="hidden"><a href="#" data-action="logout">Wyloguj</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="page-section">
+                <h1 class="page-title">Wszystkie Filmy</h1>
+                <div id="movies-container" class="movies-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../Resources/JS/script.js"></script>
+</body>
+</html>
